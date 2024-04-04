@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 type funcType func()
 
 func main() {
@@ -12,7 +14,7 @@ func main() {
 func hello() funcType {
 
 	f := func() {
-		println("Hello, Go!")
+		fmt.Println("Hello, Go!")
 	}
 	return f
 
