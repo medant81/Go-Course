@@ -10,12 +10,12 @@ type phoneCheck struct {
 	isPhone bool
 }
 
+type square int
+
 func main() {
 
 	// Task 5.1
-	var s *string = new(string)
-
-	fmt.Println(s, &s)
+	var str *string = new(string)
 
 	// Task 5.2
 	var i int
@@ -37,9 +37,9 @@ func main() {
 	fmt.Printf("Byte pointers: %p %p %p %p\nByte values: %d %d %d %d\n", &b1, &b2, &b3, &b4, b1, b2, b3, b4)
 	fmt.Printf("Int64 pointers: %p %p %p %p\nInt64 values: %d %d %d %d\n", &i1, &i2, &i3, &i4, i1, i2, i3, i4)
 	fmt.Printf("Total memory last byte: %T  %d\n", b4, unsafe.Sizeof(b4))
-	var s1 *string = new(string)
-	*s1 = "Hello string!"
-	fmt.Printf("String pointers: %p %p\nString values: %s %s\n", s, s1, *s, *s1)
+	var str1 *string = new(string)
+	*str1 = "Hello string!"
+	fmt.Printf("String pointers: %p %p\nString values: %s %s\n", str, str1, *str, *str1)
 	var check1, check2, check3 phoneCheck
 	check1.Name = "Sam"
 	check1.isPhone = true
@@ -50,4 +50,37 @@ func main() {
 	fmt.Printf("Struckt pointers: %p %p %p\n", &check1, &check2, &check3)
 	fmt.Printf("Total memory strackt: %T  %d\n", check1, unsafe.Sizeof(check1))
 
+	// Task 5.5
+	v := 5
+	fmt.Println(v) // 5
+	change(&v)
+	fmt.Println(v) // 10
+
+	// Task 5.6
+	sq := square(25)
+	fmt.Println(sq)
+
+	// Task 5.7
+	s := square(30)
+	s += 15
+	fmt.Println(s)
+
+	// Task 5.8
+	s1 := square(34)
+	s1 += 10
+	// Немного забежал вперед, но мне с методами понравилось больше
+	fmt.Printf("%s\n", s1.print())
+	fmt.Printf("%s\n", printSquare(s1))
+}
+
+func change(v *int) {
+	*v = 10
+}
+
+func printSquare(s square) string {
+	return fmt.Sprintf("%d м\u00b2", s)
+}
+
+func (s square) print() string {
+	return fmt.Sprintf("%d м\u00b2", s)
 }
