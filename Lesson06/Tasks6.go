@@ -46,7 +46,6 @@ func main() {
 	fmt.Printf("%s\n", c.print())
 
 	// Task 6.4
-	// Руки чесались заменить Addss на Address
 	type contacts struct {
 		Addss string
 		Phone string
