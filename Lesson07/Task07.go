@@ -56,10 +56,10 @@ func main() {
 	fmt.Println(bothSlices)
 
 	// Task 7.8
-	delSlice := func(s []int, index int) []int {
+	delSliceElement := func(s []int, index int) []int {
 		return append(s[:index], s[index+1:]...)
 	}
 	sl6 := []int{1, 2, 3, 4, 5, 6}
-	sl6 = delSlice(sl6, 3)
+	sl6 = delSliceElement(sl6, 3)
 	fmt.Println(sl6)
 }
