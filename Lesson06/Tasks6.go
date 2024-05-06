@@ -12,7 +12,7 @@ type contract struct {
 }
 
 // For Task 6.3
-func (c contract) print() string {
+func (c contract) String() string {
 	return fmt.Sprintf("Договор № %s от %s", c.Number, c.Date)
 }
 
@@ -43,7 +43,7 @@ func main() {
 	fmt.Printf("%+v\n", cLocal)
 
 	// Task 6.3
-	fmt.Printf("%s\n", c.print())
+	fmt.Println(c)
 
 	// Task 6.4
 	type contacts struct {
