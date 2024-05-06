@@ -26,12 +26,12 @@ func main() {
 
 	fmt.Println(animalsCount)
 
-	c, ok := animalsCount["слон"]
-	fmt.Printf("Животное: %s, количество: %d (есть в карте: %v)\n", "слон", c, ok)
-	c, ok = animalsCount["бегемот"]
-	fmt.Printf("Животное: %s, количество: %d (есть в карте: %v)\n", "бегемот", c, ok)
-	c, ok = animalsCount["осьминог"]
-	fmt.Printf("Животное: %s, количество: %d (есть в карте: %v)\n", "осьминог", c, ok)
+	valuesToSearch := [3]string{"слон", "бегемот", "осьминог"}
+
+	for _, element := range valuesToSearch {
+		c, ok := animalsCount[element]
+		fmt.Printf("Животное: %s, количество: %d (есть в карте: %v)\n", element, c, ok)
+	}
 
 	// Task 8.3
 	var animalsEmptyStruct map[string]struct{}
