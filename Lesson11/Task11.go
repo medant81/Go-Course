@@ -114,6 +114,6 @@ func main() {
 
 	// Task 11.4 fix
 	myErr := myFirstError{"Моя ошибка"}
-	err4 := fmt.Errorf("%w%w", err, myErr)
-	fmt.Println("Нет ошибки \"myFirstError\": ", errors.Is(err4, myErr))
+	// err4 := fmt.Errorf("%w%w", err, myErr) // Так моя ошибка находится
+	fmt.Println("Нет ошибки \"myFirstError\": ", errors.Is(err, myErr))
 }
