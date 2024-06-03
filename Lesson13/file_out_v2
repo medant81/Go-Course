@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<patients>
+ <Patient>
+  <name>Зайчик</name>
+  <age>2</age>
+  <email>zayac@mail.ru</email>
+ </Patient>
+ <Patient>
+  <name>Лисичка</name>
+  <age>3</age>
+  <email>alice@mail.ru</email>
+ </Patient>
+ <Patient>
+  <name>Ёжик</name>
+  <age>10</age>
+  <email>ezh@mail.ru</email>
+ </Patient>
+</patients>
