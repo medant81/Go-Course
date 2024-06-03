@@ -100,9 +100,20 @@ func main() {
 	fmt.Println(err)
 	fmt.Println("А теперь нет \"Ошибка 1:\": ", errors.As(err, new(myErr1)))
 
+	// Task 11.3 fix
+	err1 := errors.New("Ошибка 1:")
+	err2 := fmt.Errorf("Ошибка 2:%w", err1)
+	err3 := fmt.Errorf("Ошибка 3:%w", err2)
+	fmt.Println("Есть ошибка 1: ", errors.Is(err3, err1))
+
 	// Task 11.4
 	// Из предыдущей задачи взял три ошибки
 	_, err = run3(0)
 	fmt.Println(err)
 	fmt.Println("Нет ошибки \"myFirstError\": ", errors.As(err, new(myFirstError)))
+
+	// Task 11.4 fix
+	myErr := myFirstError{"Моя ошибка"}
+	err4 := fmt.Errorf("%w%w", err, myErr)
+	fmt.Println("Нет ошибки \"myFirstError\": ", errors.Is(err4, myErr))
 }
