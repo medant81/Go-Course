@@ -16,9 +16,9 @@ type Duck struct {
 
 func (d *Duck) Sing() string {
 	// Исправление №3: в методе Sing проверим на пустое значение nil
-	//if d == nil { #2
-	//	return ""
-	//}
+	if d == nil {
+		return ""
+	}
 	return d.voice
 }
 
