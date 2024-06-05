@@ -54,7 +54,7 @@ func main() {
 
 	wg := sync.WaitGroup{}
 
-	for i := 0; i < 2; i++ {
+	for i := 0; i < 10; i++ {
 		j := i
 		wg.Add(1)
 		go func() {
@@ -76,7 +76,7 @@ func main() {
 	wg.Add(1)
 	go func() {
 		defer wg.Done()
-		time.Sleep(2 * time.Second)
+		time.Sleep(3 * time.Second)
 		fmt.Println("Ой, все!")
 		close(ch)
 	}()
